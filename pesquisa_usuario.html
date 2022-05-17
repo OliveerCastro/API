@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pesquisar Usuário</title>
+</head>
+<body>
+
+  <div id="container">
+
+    <input type="text" name="" id="user_id" placeholder="Id do usuario">
+    <input type="button" value="Pesquisar" onclick="pesquisarUsuario()">
+
+    <p id="user_response"></p>
+
+  </div>
+
+  <script> 
+  
+  function pesquisarUsuario(){ 
+    const user_id = document.getElementById("user_id").value 
+    
+    const server_url = `https://jsonplaceholder.typicode.com/users/${user_id}` 
+    
+    fetch(server_url) .then(response => response.json()) 
+    .then(user_json => { 
+      console.log(user_json) 
+      }) 
+      } 
+  </script>
+  
+</body>
+</html>
